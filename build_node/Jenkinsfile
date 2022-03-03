@@ -6,14 +6,14 @@ pipeline {
             stage ('install') {
                 steps {
                     dir("build_node"){
-                      sh "npm install"
+                      echo "npm install"
                     } 
                 }
             }
             stage ('test') {
                 steps {
                   dir("build_node"){
-                        sh "npm test"
+                        echo "npm test"
                   }
                 }
             }
