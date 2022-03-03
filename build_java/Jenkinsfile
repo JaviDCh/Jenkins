@@ -6,7 +6,7 @@ pipeline {
  
             stage ('test') {
                 steps {
-                  dir("build_java"){
+                  dir("Jenkins/build_java"){
                         sh "mvn clean compile test"
                   }
                    
@@ -16,7 +16,7 @@ pipeline {
 
             stage ('Build application') {
                 steps {
-                    dir("Jenkins/build_java"){
+                    dir("build_java"){
 
                         echo "mvn -f pom.xml clean install -Dmaven.test.skip=true"
                         echo "tree"
